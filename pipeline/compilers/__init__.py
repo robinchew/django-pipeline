@@ -44,14 +44,7 @@ class Compiler(object):
             else:
                 return input_path
 
-        try:
-            import multiprocessing
-            from concurrent import futures
-        except ImportError:
-            return list(map(_compile, paths))
-        else:
-            with futures.ThreadPoolExecutor(max_workers=multiprocessing.cpu_count()) as executor:
-                return list(executor.map(_compile, paths))
+        return list(map(_compile, paths))
 
 
 class CompilerBase(object):
