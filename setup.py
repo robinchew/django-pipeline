@@ -5,18 +5,16 @@ from setuptools import setup, find_packages
 import sys
 
 install_requires = []
-if (sys.version_info[0], sys.version_info[1]) < (3, 2):
-    install_requires.append('futures>=2.1.3')
 
 setup(
-    name='django-pipeline',
-    version='1.6.8',
+    name='django-pipeline-no-future',
+    version='1.6.8.1',
     description='Pipeline is an asset packaging library for Django.',
     long_description=io.open('README.rst', encoding='utf-8').read() + '\n\n' +
         io.open('HISTORY.rst', encoding='utf-8').read(),
-    author='Timothée Peignier',
-    author_email='timothee.peignier@tryphon.org',
-    url='https://github.com/jazzband/django-pipeline',
+    author='Robin Chew',
+    author_email='robin@obsi.com.au',
+    url='https://github.com/robinchew/django-pipeline',
     license='MIT',
     packages=find_packages(exclude=['tests', 'tests.tests']),
     zip_safe=False,
