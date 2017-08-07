@@ -48,10 +48,7 @@ class PipelineMixin(object):
         return packager.package_for(package_type, package_name)
 
     def render(self, context):
-        try:
-            self.request = self.request_var.resolve(context)
-        except VariableDoesNotExist:
-            pass
+        pass
 
     def render_compressed(self, package, package_name, package_type):
         """Render HTML for the package.
